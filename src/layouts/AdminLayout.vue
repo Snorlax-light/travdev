@@ -22,7 +22,6 @@
 <script setup>
 import { ref } from 'vue'
 
-
 const leftDrawerOpen = ref(false)
 
 function toggleLeftDrawer() {
