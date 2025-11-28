@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'UserDashboard'
+  name: 'user-dashboard',
 }
 </script>

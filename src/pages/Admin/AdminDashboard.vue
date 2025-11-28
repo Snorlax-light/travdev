@@ -1,11 +1,11 @@
 <template>
   <q-page padding>
-    <div class="text-h4">This is a Register Page</div>
+    <div class="text-h4">This is an Admin Dashboard Page</div>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'register-page'
+  name: 'admin-dashboard'
 }
 </script>

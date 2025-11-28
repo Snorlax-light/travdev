@@ -9,35 +9,40 @@ const routes = [
 
       {
         path: 'login',
+        name: 'login-page',
         component: () => import('pages/auth/LoginPage.vue'),
       },
 
       {
         path: 'register',
+        name: 'register-page',
         component: () => import('pages/auth/RegisterPage.vue'),
       },
 
       {
-        path: 'user-dashboard',
+        path: 'user',
+        name: 'user-dashboard',
         component: () => import('pages/User/UserDashboard.vue'),
       },
+    ],
+  },
 
+  {
 
+   path: '/admin-dashboard',
+    component: () => import('layouts/AdminLayout.vue'),
+    children: [
 
-
-
-
-
-
-
-
+      { path: '',
+        name: 'admin-dashboard',
+        component: () => import('pages/Admin/AdminDashboard.vue'),
+      },
 
 
     ],
   },
 
-  // Always leave this as last one,
-  // but you can also remove it
+
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
