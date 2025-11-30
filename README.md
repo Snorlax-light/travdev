@@ -41,3 +41,7 @@ quasar build
 ### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+
+### dummy json server
+json-server --watch db.json --port 3000

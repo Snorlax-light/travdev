@@ -1,0 +1,193 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Jane Doe",
+      "email": "jane@example.com",
+      "password": "password123",
+      "role": "user",
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": 2,
+      "fullName": "John Smith",
+      "email": "john@example.com",
+      "password": "password123",
+      "role": "admin",
+      "createdAt": "2024-01-10"
+    },
+    {
+      "id": 3,
+      "fullName": "Alice Johnson",
+      "email": "alice@example.com",
+      "password": "password123",
+      "role": "user",
+      "createdAt": "2024-02-01"
+    }
+  ],
+  "tours": [
+    {
+      "id": 1,
+      "name": "Parisian Dream",
+      "location": "Paris, France",
+      "duration": "7 Days",
+      "price": 1800,
+      "image": "/images/p-4.jpg",
+      "description": "Experience the romance and charm of Paris, from the Eiffel Tower to the Louvre.",
+      "highlights": [
+        "Eiffel Tower visit",
+        "Louvre Museum tour",
+        "Seine River cruise",
+        "Montmartre exploration"
+      ],
+      "availability": true
+    },
+    {
+      "id": 2,
+      "name": "Tokyo Lights",
+      "location": "Tokyo, Japan",
+      "duration": "10 Days",
+      "price": 2500,
+      "image": "/images/p-5.jpg",
+      "description": "Immerse yourself in the vibrant culture and futuristic landscapes of Tokyo.",
+      "highlights": [
+        "Shibuya Crossing",
+        "Tokyo Tower",
+        "Traditional tea ceremony",
+        "Mount Fuji day trip"
+      ],
+      "availability": true
+    },
+    {
+      "id": 3,
+      "name": "Roman Holiday",
+      "location": "Rome, Italy",
+      "duration": "5 Days",
+      "price": 1500,
+      "image": "/images/p-6.jpg",
+      "description": "Walk through history in the eternal city, exploring ancient ruins and renaissance art.",
+      "highlights": [
+        "Colosseum tour",
+        "Vatican Museums",
+        "Trevi Fountain",
+        "Roman Forum"
+      ],
+      "availability": true
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "tourId": 1,
+      "package": "Parisian Dream",
+      "userName": "Jane Doe",
+      "travelDate": "2024-09-15",
+      "status": "Confirmed",
+      "assignedAgent": "Alice Johnson",
+      "bookingDate": "2024-07-20",
+      "totalPrice": 1800
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "tourId": 2,
+      "package": "Tokyo Lights",
+      "userName": "John Smith",
+      "travelDate": "2024-10-20",
+      "status": "Confirmed",
+      "assignedAgent": "Bob Williams",
+      "bookingDate": "2024-08-05",
+      "totalPrice": 2500
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "tourId": 3,
+      "package": "Egyptian Wonders",
+      "userName": "Alice Johnson",
+      "travelDate": "2025-01-05",
+      "status": "Pending",
+      "assignedAgent": "Alice Johnson",
+      "bookingDate": "2024-11-15",
+      "totalPrice": 2200
+    }
+  ],
+  "guides": [
+    {
+      "id": 1,
+      "name": "Maria Rossi",
+      "image": "https://i.pravatar.cc/150?img=32",
+      "languages": ["Italian", "English"],
+      "specialization": "Ancient Rome History",
+      "contact": "maria.rossi@email.com",
+      "rating": 4.9,
+      "toursCompleted": 156
+    },
+    {
+      "id": 2,
+      "name": "Ken Tanaka",
+      "image": "https://i.pravatar.cc/150?img=15",
+      "languages": ["Japanese", "English"],
+      "specialization": "Tokyo Modern Culture",
+      "contact": "ken.tanaka@email.com",
+      "rating": 4.8,
+      "toursCompleted": 203
+    },
+    {
+      "id": 3,
+      "name": "Jean-Pierre Dubois",
+      "image": "https://i.pravatar.cc/150?img=5",
+      "languages": ["French", "English", "Spanish"],
+      "specialization": "Parisian Art & Cuisine",
+      "contact": "jp.dubois@email.com",
+      "rating": 5.0,
+      "toursCompleted": 189
+    },
+    {
+      "id": 4,
+      "name": "Ahmed Hassan",
+      "image": "https://i.pravatar.cc/150?img=60",
+      "languages": ["Arabic", "English"],
+      "specialization": "Egyptology",
+      "contact": "ahmed.hassan@email.com",
+      "rating": 4.7,
+      "toursCompleted": 142
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Luxury Van",
+      "type": "Group Transport",
+      "price": 9500,
+      "description": "Comfortable transport ideal for families and groups.",
+      "image": "/images/Vehicles/LaxuryVan.jpg",
+      "capacity": 12,
+      "features": ["Air conditioning", "WiFi", "Reclining seats", "Entertainment system"],
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Private Car",
+      "type": "Personal Transport",
+      "price": 7500,
+      "description": "A private and convenient way to explore destinations.",
+      "image": "/images/Vehicles/PrivateCar.jpg",
+      "capacity": 4,
+      "features": ["Air conditioning", "GPS", "Premium sound system"],
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Tour Bus",
+      "type": "Large Group Transport",
+      "price": 10500,
+      "description": "Perfect for big groups and long-distance travel.",
+      "image": "/images/Vehicles/TourBus.jpg",
+      "capacity": 45,
+      "features": ["Air conditioning", "WiFi", "Restroom", "Panoramic windows"],
+      "available": true
+    }
+  ]
+}

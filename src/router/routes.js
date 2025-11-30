@@ -8,13 +8,9 @@ const routes = [
     name: 'login-page',
     component: () => import('pages/auth/LoginPage.vue'),
   },
-  {
-    path: '/register',
-    name: 'register-page',
-    component: () => import('pages/auth/RegisterPage.vue'),
-  },
 
-  // USER LAYOUT + SIDEBAR
+
+  // USER
   {
     path: '/user',
     component: () => import('layouts/MainLayout.vue'),
@@ -43,7 +39,7 @@ const routes = [
     ],
   },
 
-  // ADMIN LAYOUT + SIDEBAR
+  // ADMIN 
   {
     path: '/admin',
     component: () => import('layouts/AdminLayout.vue'),

@@ -57,9 +57,30 @@
       </q-list>
 
       <!-- Bottom User Box -->
-      <div v-if="!drawerMini" class="absolute-bottom q-pa-md user-box">
-        <div class="text-subtitle2">Jane Doe</div>
-        <div class="text-caption text-grey-4">Logged in</div>
+      <div class="absolute-bottom q-pa-md user-box">
+        <div v-if="!drawerMini">
+          <div class="text-subtitle2">Jane Doe</div>
+          <q-btn
+            flat
+            dense
+            class="full-width q-mt-sm"
+            icon="logout"
+            label="Logout"
+            color="white"
+            @click="logout"
+          />
+        </div>
+        <div v-else class="column items-center q-gutter-sm">
+          <q-icon name="person" color="white" />
+          <q-btn
+            flat
+            dense
+            round
+            icon="logout"
+            color="white"
+            @click="logout"
+          />
+        </div>
       </div>
 
     </q-drawer>
@@ -69,9 +90,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
 const drawer = ref(true);
 const drawerMini = ref(false);
 
@@ -84,6 +106,13 @@ const menu = [
 ];
 
 const isActive = (path) => route.path === path;
+
+const logout = () => {
+  // Remove user data from localStorage
+  localStorage.removeItem('user');
+  // Redirect to login page
+  router.push('/login');
+}
 </script>
 
 <style scoped>
@@ -112,5 +141,11 @@ const isActive = (path) => route.path === path;
 
 .sidebar-header {
   min-height: 60px;
+}
+
+.absolute-bottom {
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 16px;
 }
 </style>

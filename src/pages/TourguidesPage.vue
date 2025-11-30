@@ -64,28 +64,28 @@ const columns = [
 const rows = [
   {
     name: 'Maria Rossi',
-    image: 'https://i.pravatar.cc/150?img=32',
+    image: '/public/images/guides/pic-2.png',
     languages: ['Italian', 'English'],
     specialization: 'Ancient Rome History',
     contact: 'maria.rossi@email.com'
   },
   {
     name: 'Ken Tanaka',
-    image: 'https://i.pravatar.cc/150?img=15',
+    image: '/public/images/guides/pic-3.png',
     languages: ['Japanese', 'English'],
     specialization: 'Tokyo Modern Culture',
     contact: 'ken.tanaka@email.com'
   },
   {
     name: 'Jean-Pierre Dubois',
-    image: 'https://i.pravatar.cc/150?img=5',
+    image: '/public/images/guides/pic-4.png',
     languages: ['French', 'English', 'Spanish'],
     specialization: 'Parisian Art & Cuisine',
     contact: 'jp.dubois@email.com'
   },
   {
     name: 'Ahmed Hassan',
-    image: 'https://i.pravatar.cc/150?img=60',
+    image: '/public/images/guides/pic-1.png',
     languages: ['Arabic', 'English'],
     specialization: 'Egyptology',
     contact: 'ahmed.hassan@email.com'

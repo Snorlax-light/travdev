@@ -53,10 +53,26 @@
       <div class="absolute-bottom q-pa-md">
         <div v-if="!drawerMini">
           <div class="text-subtitle2">Admin User</div>
-          <div class="text-caption text-grey-4">Administrator</div>
+          <q-btn
+            flat
+            dense
+            class="full-width q-mt-sm"
+            icon="logout"
+            label="Logout"
+            color="white"
+            @click="logout"
+          />
         </div>
-        <div v-else class="row justify-center">
+        <div v-else class="column items-center q-gutter-sm">
           <q-icon name="person" color="white" />
+          <q-btn
+            flat
+            dense
+            round
+            icon="logout"
+            color="white"
+            @click="logout"
+          />
         </div>
       </div>
 
@@ -67,9 +83,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const router = useRouter();
 const drawer = ref(true);
 const drawerMini = ref(false);
 
@@ -79,6 +96,13 @@ const menu = [
 ];
 
 const isActive = (path) => route.path === path;
+
+const logout = () => {
+  // Remove user data from localStorage
+  localStorage.removeItem('user');
+  // Redirect to login page
+  router.push('/login');
+}
 </script>
 
 <style scoped>
