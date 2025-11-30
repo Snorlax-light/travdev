@@ -3,7 +3,6 @@
 
     <div class="row items-center q-mb-lg">
       <div class="text-h4 text-weight-bold">User Management</div>
-      <q-btn color="primary" label="Add User" class="q-ml-auto" @click="addUser"/>
     </div>
     <div class="text-subtitle1 text-grey-7 q-mb-xl">
       Manage all registered users and their roles.
@@ -19,20 +18,28 @@
         separator="horizontal"
         hide-bottom
       >
+        <!-- Role Chip -->
         <template v-slot:body-cell-role="props">
-          <q-chip
-            :color="props.row.role === 'admin' ? 'orange' : 'primary'"
-            text-color="white"
-            dense
-            square
-          >
-            {{ props.row.role }}
-          </q-chip>
+          <q-td :props="props">
+            <q-chip
+              :color="props.row.role === 'admin' ? 'orange' : 'primary'"
+              text-color="white"
+              dense
+              square
+            >
+              {{ props.row.role }}
+            </q-chip>
+          </q-td>
         </template>
 
+        <!-- Actions -->
         <template v-slot:body-cell-actions="props">
-          <q-btn flat round icon="edit" color="primary" @click="editUser(props.row)" />
-          <q-btn flat round icon="delete" color="negative" @click="deleteUser(props.row)" />
+          <q-td :props="props">
+            <div class="q-gutter-sm">
+              <q-btn flat round icon="edit" color="primary" @click="editUser(props.row)" />
+              <q-btn flat round icon="delete" color="negative" @click="deleteUser(props.row)" />
+            </div>
+          </q-td>
         </template>
       </q-table>
 
@@ -53,11 +60,10 @@ const users = ref([
 const columns = [
   { name: 'name', label: 'Name', field: 'name', align: 'left' },
   { name: 'email', label: 'Email', field: 'email', align: 'left' },
-  { name: 'role', label: 'Role', field: 'role', align: 'center' },
-  { name: 'actions', label: 'Actions', field: 'actions', align: 'center' }
+  { name: 'role', label: 'Role', field: 'role', align: 'left', style: 'width: 120px' },
+  { name: 'actions', label: 'Actions', field: 'actions', align: 'right', style: 'width: 150px' }
 ];
 
-const addUser = () => { console.log('Add User'); };
 const editUser = (user) => { console.log('Edit', user); };
 const deleteUser = (user) => { console.log('Delete', user); };
 </script>

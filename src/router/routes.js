@@ -59,11 +59,6 @@ const routes = [
         name: 'admin-users',
         component: () => import('pages/Admin/UserManagementPage.vue'),
       },
-      {
-        path: 'reports',
-        name: 'admin-reports',
-        component: () => import('pages/Admin/ReportsPage.vue'),
-      },
     ],
   },
 

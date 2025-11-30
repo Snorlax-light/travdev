@@ -48,7 +48,7 @@ const vehicles = [
     id: 1,
     name: 'Luxury Van',
     type: 'Group Transport',
-    price: '4500',
+    price: '9,500',
     description: 'Comfortable transport ideal for families and groups.',
     image: 'https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg'
   },
@@ -56,7 +56,7 @@ const vehicles = [
     id: 2,
     name: 'Private Car',
     type: 'Personal Transport',
-    price: '2500',
+    price: '7,500',
     description: 'A private and convenient way to explore destinations.',
     image: 'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg'
   },
@@ -64,7 +64,7 @@ const vehicles = [
     id: 3,
     name: 'Tour Bus',
     type: 'Large Group Transport',
-    price: '8500',
+    price: '10,500',
     description: 'Perfect for big groups and long-distance travel.',
     image: 'https://images.pexels.com/photos/3859994/pexels-photo-3859994.jpeg'
   }

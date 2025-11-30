@@ -22,14 +22,16 @@
         separator="horizontal"
       >
         <template v-slot:body-cell-status="props">
-          <q-chip
-            :color="props.row.status === 'Confirmed' ? 'primary' : 'grey-5'"
-            text-color="white"
-            square
-            dense
-          >
-            {{ props.row.status }}
-          </q-chip>
+          <q-td :props="props">
+            <q-chip
+              :color="props.row.status === 'Confirmed' ? 'primary' : 'grey-5'"
+              text-color="white"
+              square
+              dense
+            >
+              {{ props.row.status }}
+            </q-chip>
+          </q-td>
         </template>
       </q-table>
 
@@ -49,6 +51,6 @@ const columns = [
 const rows = [
   { package: 'Parisian Dream', date: '9/15/2024', status: 'Confirmed', agent: 'Alice Johnson' },
   { package: 'Tokyo Lights', date: '10/20/2024', status: 'Confirmed', agent: 'Bob Williams' },
-  { package: 'Roman Holiday', date: '1/5/2025', status: 'Pending', agent: 'Alice Johnson' }
+  { package: 'Egyptian Wonders', date: '1/5/2025', status: 'Pending', agent: 'Alice Johnson' }
 ]
 </script>

@@ -9,7 +9,7 @@
       side="left"
       class="bg-primary text-white"
       :width="240"
-      mini-width="80"
+      :mini-width="80"
     >
 
       <!-- Header: toggle + title -->
@@ -76,7 +76,6 @@ const drawerMini = ref(false);
 const menu = [
   { label: "Dashboard", icon: "dashboard", to: "/admin" },
   { label: "Users", icon: "people", to: "/admin/users" },
-  { label: "Reports", icon: "analytics", to: "/admin/reports" }
 ];
 
 const isActive = (path) => route.path === path;

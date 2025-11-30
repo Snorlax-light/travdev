@@ -9,7 +9,7 @@
       side="left"
       class="bg-primary text-white"
       :width="240"
-      mini-width="80"
+      :mini-width="80"
     >
 
       <!-- Header: toggle + title -->

@@ -2,38 +2,70 @@
   <q-page class="q-pa-xl">
 
     <!-- TITLE -->
-    <div class="text-h4 text-weight-bold">Explore Our Tour Packages</div>
+    <div class="text-h4 text-weight-bold q-mb-md">Explore Our Tour Packages</div>
     <div class="text-subtitle1 text-grey-7 q-mb-xl">
       Find your next adventure from our curated list of destinations.
     </div>
 
     <!-- TOUR PACKAGES GRID -->
-    <div class="row q-col-gutter-xl">
+    <div class="row q-col-gutter-lg">
       <div
-        class="col-12 col-md-4"
+        class="col-12 col-md-6 col-lg-4"
         v-for="tour in tours"
         :key="tour.id"
       >
-        <q-card bordered flat class="full-height">
+        <q-card flat bordered class="tour-card">
 
-          <q-img :src="tour.image" ratio="16/9" />
+          <!-- Image -->
+          <q-img
+            :src="tour.image"
+            :ratio="16/9"
+            class="rounded-borders"
+          >
+            <template v-slot:error>
+              <div class="absolute-full flex flex-center bg-grey-3 text-grey-7">
+                <q-icon name="image" size="64px" />
+              </div>
+            </template>
+          </q-img>
 
-          <q-card-section>
-            <div class="text-h6">{{ tour.name }}</div>
-            <div class="text-caption text-grey-7">{{ tour.location }}</div>
+          <q-card-section class="q-pt-md">
+            <!-- Title -->
+            <div class="text-h6 text-weight-bold q-mb-sm">{{ tour.name }}</div>
+
+            <!-- Location with icon -->
+            <div class="flex items-center q-mb-xs text-grey-7">
+              <q-icon name="place" size="18px" class="q-mr-xs" />
+              <span class="text-body2">{{ tour.location }}</span>
+            </div>
+
+            <!-- Duration with icon -->
+            <div class="flex items-center q-mb-md text-grey-7">
+              <q-icon name="schedule" size="18px" class="q-mr-xs" />
+              <span class="text-body2">{{ tour.duration }}</span>
+            </div>
+
+            <!-- Description -->
+            <div class="text-body2 text-grey-8">
+              {{ tour.description }}
+            </div>
           </q-card-section>
 
-          <q-card-section>
-            {{ tour.description }}
+          <!-- Price and Button Section -->
+          <q-card-section class="q-pt-none">
+            <div class="flex items-center justify-between">
+              <div class="text-h6 text-weight-bold text-primary">
+                PHP {{ tour.price.toLocaleString() }}
+              </div>
+              <q-btn
+                color="primary"
+                label="Book Now"
+                unelevated
+                padding="8px 24px"
+                icon-right="arrow_forward"
+              />
+            </div>
           </q-card-section>
-
-          <q-card-section>
-            <div class="text-h6 text-primary">₱{{ tour.price }}</div>
-          </q-card-section>
-
-          <q-card-actions align="right">
-            <q-btn color="primary" flat label="View Details" />
-          </q-card-actions>
 
         </q-card>
       </div>
@@ -43,31 +75,47 @@
 </template>
 
 <script setup>
-
 const tours = [
   {
     id: 1,
     name: 'Parisian Dream',
     location: 'Paris, France',
-    price: '35,000',
-    image: 'https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg',
-    description: 'Discover the charm of Paris with iconic landmarks and rich culture.'
+    duration: '7 Days',
+    price: 102600,
+    image: '/images/p-4.jpg',
+    description: 'Experience the romance and charm of Paris, from the Eiffel Tower to the Louvre.'
   },
   {
     id: 2,
     name: 'Tokyo Lights',
     location: 'Tokyo, Japan',
-    price: '42,000',
-    image: 'https://images.pexels.com/photos/2187601/pexels-photo-2187601.jpeg',
-    description: 'Experience modern city life mixed with ancient traditions.'
+    duration: '10 Days',
+    price: 142500,
+    image: '/images/p-5.jpg',
+    description: 'Immerse yourself in the vibrant culture and futuristic landscapes of Tokyo.'
   },
   {
     id: 3,
-    name: 'Santorini Escape',
-    location: 'Greece',
-    price: '55,000',
-    image: 'https://images.pexels.com/photos/1642414/pexels-photo-1642414.jpeg',
-    description: 'Relax and enjoy the breathtaking ocean views and architecture.'
+    name: 'Egyptian Wonders',
+    location: ' Egypt',
+    duration: '5 Days',
+    price: 85500,
+    image: '/images/p-6.jpg',
+    description: 'Walk through ancient history in the land of pharaohs, exploring timeless pyramids.'
   }
 ]
 </script>
+
+<style scoped>
+.tour-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+</style>

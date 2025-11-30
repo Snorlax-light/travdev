@@ -26,16 +26,19 @@
         row-key="id"
         flat
         hide-bottom
+        separator="horizontal"
       >
         <template v-slot:body-cell-status="props">
-          <q-chip
-            :color="props.row.status === 'Confirmed' ? 'primary' : 'grey-5'"
-            text-color="white"
-            dense
-            square
-          >
-            {{ props.row.status }}
-          </q-chip>
+          <q-td :props="props">
+            <q-chip
+              :color="props.row.status === 'Confirmed' ? 'primary' : 'grey-5'"
+              text-color="white"
+              dense
+              square
+            >
+              {{ props.row.status }}
+            </q-chip>
+          </q-td>
         </template>
       </q-table>
     </q-card>
@@ -56,13 +59,13 @@ const stats = [
 const bookings = ref([
   { id: 1, package: "Parisian Dream", user: "Jane Doe", date: "2024-09-15", status: "Confirmed" },
   { id: 2, package: "Tokyo Lights", user: "John Smith", date: "2024-10-20", status: "Pending" },
-  { id: 3, package: "Santorini Escape", user: "Alice Johnson", date: "2025-01-05", status: "Confirmed" },
+  { id: 3, package: "Egyptian Wonders", user: "Alice Johnson", date: "2025-01-05", status: "Confirmed" },
 ]);
 
 const bookingColumns = [
   { name: "package", label: "Package", field: "package", align: "left" },
   { name: "user", label: "User", field: "user", align: "left" },
   { name: "date", label: "Travel Date", field: "date", align: "left" },
-  { name: "status", label: "Status", field: "status", align: "center" },
+  { name: "status", label: "Status", field: "status", align: "left" },
 ];
 </script>

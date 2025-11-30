@@ -21,24 +21,28 @@
         row-key="name"
         hide-bottom
       >
-        <template v-slot:body-cell-languages="props">
-          <div class="row q-gutter-sm">
-            <q-chip
-              v-for="lang in props.row.languages"
-              :key="lang"
-              color="grey-3"
-              text-color="black"
-              dense
-            >
-              {{ lang }}
-            </q-chip>
-          </div>
+        <template v-slot:body-cell-image="props">
+          <q-td :props="props">
+            <q-avatar size="40px">
+              <img :src="props.row.image" />
+            </q-avatar>
+          </q-td>
         </template>
 
-        <template v-slot:body-cell-image="props">
-          <q-avatar size="40px">
-            <img :src="props.row.image" />
-          </q-avatar>
+        <template v-slot:body-cell-languages="props">
+          <q-td :props="props">
+            <div class="row q-gutter-sm">
+              <q-chip
+                v-for="lang in props.row.languages"
+                :key="lang"
+                color="grey-3"
+                text-color="black"
+                dense
+              >
+                {{ lang }}
+              </q-chip>
+            </div>
+          </q-td>
         </template>
 
       </q-table>
@@ -50,7 +54,7 @@
 
 <script setup>
 const columns = [
-  { name: 'image', label: '', field: 'image', align: 'left' },
+  { name: 'image', label: '', field: 'image', align: 'left', style: 'width: 60px' },
   { name: 'name', label: 'Name', field: 'name', align: 'left' },
   { name: 'languages', label: 'Languages', field: 'languages', align: 'left' },
   { name: 'specialization', label: 'Specialization', field: 'specialization', align: 'left' },
