@@ -1,7 +1,7 @@
 <template>
   <div class="row no-wrap">
 
-    <!-- Sidebar -->
+
     <q-drawer
       v-model="drawer"
       :mini="drawerMini"
@@ -12,10 +12,10 @@
       :mini-width="80"
     >
 
-      <!-- Header: toggle + title -->
+
       <div class="row items-center q-pa-md sidebar-header">
 
-        <!-- This toggles mini/max -->
+
         <q-btn
           flat
           dense
@@ -25,14 +25,12 @@
           @click="drawerMini = !drawerMini"
         />
 
-        <!-- Title (hidden in mini mode) -->
         <div v-if="!drawerMini" class="text-h6 q-ml-sm">
           Travel Tours
         </div>
 
       </div>
 
-      <!-- Menu List -->
       <q-list class="q-pa-sm">
         <q-item
           v-for="item in menu"
@@ -49,14 +47,13 @@
             <q-icon :name="item.icon" />
           </q-item-section>
 
-          <!-- Hide labels when mini -->
+
           <q-item-section v-if="!drawerMini">
             {{ item.label }}
           </q-item-section>
         </q-item>
       </q-list>
 
-      <!-- Bottom User Box -->
       <div class="absolute-bottom q-pa-md user-box">
         <div v-if="!drawerMini">
           <div class="text-subtitle2">Jane Doe</div>
@@ -97,7 +94,7 @@ const router = useRouter();
 const drawer = ref(true);
 const drawerMini = ref(false);
 
-// Sidebar menu
+
 const menu = [
   { label: "Dashboard", icon: "dashboard", to: "/user" },
   { label: "Bookings", icon: "event", to: "/user/bookings" },
@@ -108,9 +105,7 @@ const menu = [
 const isActive = (path) => route.path === path;
 
 const logout = () => {
-  // Remove user data from localStorage
   localStorage.removeItem('user');
-  // Redirect to login page
   router.push('/login');
 }
 </script>

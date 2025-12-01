@@ -1,13 +1,12 @@
 <template>
   <q-page class="q-pa-xl">
 
-    <!-- Header -->
     <div class="text-h4 text-weight-bold q-mb-md">Admin Dashboard</div>
     <div class="text-subtitle1 text-grey-7 q-mb-xl">
       Quick overview of your Travel & Tours platform
     </div>
 
-    <!-- Stats Row -->
+
     <div class="row q-col-gutter-md q-mb-xl">
       <div class="col-6 col-md-3" v-for="card in stats" :key="card.title">
         <q-card flat bordered class="q-pa-md">
@@ -17,7 +16,6 @@
       </div>
     </div>
 
-    <!-- Recent Bookings -->
     <q-card flat bordered class="q-pa-lg">
       <div class="text-h6 q-mb-md">Recent Bookings</div>
       <q-table

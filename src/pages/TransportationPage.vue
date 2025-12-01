@@ -29,22 +29,22 @@
           </q-img>
 
           <q-card-section class="q-pt-md">
-            <!-- Title -->
+
             <div class="text-h6 text-weight-bold q-mb-sm">{{ vehicle.name }}</div>
 
-            <!-- Type with icon -->
+
             <div class="flex items-center q-mb-md text-grey-7">
               <q-icon name="category" size="18px" class="q-mr-xs" />
               <span class="text-body2">{{ vehicle.type }}</span>
             </div>
 
-            <!-- Description -->
+
             <div class="text-body2 text-grey-8">
               {{ vehicle.description }}
             </div>
           </q-card-section>
 
-          <!-- Price and Button Section -->
+       
           <q-card-section class="q-pt-none">
             <div class="flex items-center justify-between">
               <div>

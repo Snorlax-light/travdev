@@ -18,7 +18,7 @@
         separator="horizontal"
         hide-bottom
       >
-        <!-- Role Chip -->
+
         <template v-slot:body-cell-role="props">
           <q-td :props="props">
             <q-chip
@@ -32,7 +32,7 @@
           </q-td>
         </template>
 
-        <!-- Actions -->
+
         <template v-slot:body-cell-actions="props">
           <q-td :props="props">
             <div class="q-gutter-sm">

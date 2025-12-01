@@ -4,7 +4,6 @@
     <!-- LOGIN CARD -->
     <q-card v-if="!showRegister" flat bordered class="auth-card q-pa-lg">
 
-      <!-- Logo/Brand -->
       <q-card-section class="text-center q-pb-none">
         <div class="text-h4 text-weight-bold text-primary q-mb-xs">Travel Tours</div>
         <div class="text-subtitle2 text-grey-7">Sign in to your account</div>
@@ -13,7 +12,7 @@
       <q-card-section>
         <q-form @submit.prevent="onLogin" class="q-gutter-md">
 
-          <!-- Email Input -->
+
           <q-input
             v-model="loginForm.email"
             type="email"
@@ -26,7 +25,7 @@
             </template>
           </q-input>
 
-          <!-- Password Input -->
+
           <q-input
             v-model="loginForm.password"
             :type="showLoginPassword ? 'text' : 'password'"
@@ -46,13 +45,12 @@
             </template>
           </q-input>
 
-          <!-- Remember Me & Forgot Password -->
+
           <div class="row items-center justify-between">
             <q-checkbox v-model="loginForm.remember" label="Remember me" />
             <q-btn flat dense color="primary" label="Forgot Password?" no-caps />
           </div>
 
-          <!-- Login Button -->
           <q-btn
             type="submit"
             color="primary"
@@ -65,7 +63,7 @@
         </q-form>
       </q-card-section>
 
-      <!-- Sign Up Link -->
+
       <q-card-section class="text-center">
         <div class="text-body2 text-grey-7">
           Don't have an account?
@@ -176,16 +174,13 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import db from 'src/db.json'
 
-// Router
 const router = useRouter()
-
-// Access data
 const users = db.users
 
-// Toggle between login and register
+
 const showRegister = ref(false)
 
-// Login form
+
 const loginForm = ref({
   email: '',
   password: '',
@@ -194,7 +189,7 @@ const loginForm = ref({
 
 const showLoginPassword = ref(false)
 
-// Register form
+
 const registerForm = ref({
   fullName: '',
   email: '',
@@ -206,7 +201,6 @@ const showPassword = ref(false)
 const showConfirmPassword = ref(false)
 
 const onLogin = () => {
-  // Find user with matching email and password
   const user = users.find(
     u => u.email === loginForm.value.email &&
          u.password === loginForm.value.password
@@ -214,7 +208,6 @@ const onLogin = () => {
 
   if (user) {
     console.log('Login successful!', user)
-    // Store user data in localStorage (optional)
     localStorage.setItem('user', JSON.stringify(user))
 
     if (user.role === 'admin') {
@@ -231,7 +224,6 @@ const onLogin = () => {
 }
 
 const onRegister = () => {
-  // Create new user object
   const newUser = {
     id: users.length + 1,
     fullName: registerForm.value.fullName,
@@ -241,7 +233,6 @@ const onRegister = () => {
     createdAt: new Date().toISOString().split('T')[0]
   }
 
-  // Check if email already exists
   const emailExists = users.find(u => u.email === registerForm.value.email)
 
   if (emailExists) {
@@ -249,16 +240,16 @@ const onRegister = () => {
     return
   }
 
-  // Add new user to users array (in a real app, this would be saved to database)
+
   users.push(newUser)
 
   console.log('Registration successful!', newUser)
   alert('Account created successfully! Please sign in.')
 
-  // Switch to login form
+
   showRegister.value = false
 
-  // Clear register form
+ 
   registerForm.value = {
     fullName: '',
     email: '',

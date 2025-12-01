@@ -1,7 +1,6 @@
 <template>
   <div class="row no-wrap">
 
-    <!-- Sidebar -->
     <q-drawer
       v-model="drawer"
       :mini="drawerMini"
@@ -12,7 +11,6 @@
       :mini-width="80"
     >
 
-      <!-- Header: toggle + title -->
       <div class="row items-center q-pa-md sidebar-header">
         <q-btn
           flat
@@ -27,7 +25,6 @@
         </div>
       </div>
 
-      <!-- Menu List -->
       <q-list class="q-pa-sm">
         <q-item
           v-for="item in menu"
@@ -49,7 +46,7 @@
         </q-item>
       </q-list>
 
-      <!-- Bottom User Section -->
+
       <div class="absolute-bottom q-pa-md">
         <div v-if="!drawerMini">
           <div class="text-subtitle2">Admin User</div>
@@ -98,9 +95,7 @@ const menu = [
 const isActive = (path) => route.path === path;
 
 const logout = () => {
-  // Remove user data from localStorage
   localStorage.removeItem('user');
-  // Redirect to login page
   router.push('/login');
 }
 </script>
